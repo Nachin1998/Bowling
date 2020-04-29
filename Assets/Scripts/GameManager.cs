@@ -6,8 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public GameObject ball;
     public List<Pine> pines = new List<Pine>();
+    public float forceToAdd;
     Rigidbody rb;
     float power;
+
     void Start()
     {
         rb = ball.GetComponent<Rigidbody>();
@@ -18,7 +20,7 @@ public class GameManager : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Space))
         {
-            power += 100;
+            power += forceToAdd;
         }
          
         if(Input.GetKeyUp(KeyCode.Space))
